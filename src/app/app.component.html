@@ -1,0 +1,10 @@
+<mat-tab-group>
+  <mat-tab 
+    *ngFor="let type of types"
+    label="{{ type | uppercase }}"
+  >
+    <app-crud-component
+      [type]="type"
+    ></app-crud-component>
+  </mat-tab>
+</mat-tab-group>

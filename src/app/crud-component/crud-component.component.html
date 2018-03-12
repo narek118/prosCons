@@ -1,0 +1,24 @@
+<div class="list">
+  <h1>{{type | uppercase}}</h1>
+  <span *ngIf="!items || !items.length">Ooops, No {{type}}</span>
+  
+  <ol>
+    <li *ngFor="let item of items; let i = index">
+        <a href="#">{{item}}</a>
+        <button mat-raised-button color="warn" (click)="delete(i)">Delete</button>
+      </li>
+  </ol>
+
+</div>
+
+<form id="form">
+  <mat-form-field>
+    <input
+      matInput 
+      placeholder="Add new {{type}}" 
+      [(ngModel)]="newItemValue"
+      name="newItem"
+    >
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="add()">Add</button>
+</form>
